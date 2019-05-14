@@ -1,0 +1,20 @@
+<div class="container mt-3">
+  {{ asyncTitle | async }}
+  <div class="row">
+    <div class="col-12 col-offset-1">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let lesson of lessons">
+          <span
+            class="badge">
+            {{ lesson.status }}
+          </span>
+          <strong>{{ lesson.name | shorten:10:'...' | lowercase }}</strong> /
+          {{ lesson.lessonComplexity | uppercase }} /
+          {{ lesson.started | date:'medium' }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
